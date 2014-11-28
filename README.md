@@ -38,6 +38,8 @@ new Sortable(el, {
 	filter: ".ignor-elements", // Selectors that do not lead to dragging (String or Function)
 	draggable: ".item",   // Specifies which items inside the element should be sortable
 	ghostClass: "sortable-ghost",
+	scrollBuffer: 50 // Specifies distance from top/bottom when auto-scroll starts
+	scrollSpeed: 10 // Speed of scroll
 	
 	onStart: function (/**Event*/evt) { /* dragging */ },
 	onEnd: function (/**Event*/evt) { /* dragging */ },
