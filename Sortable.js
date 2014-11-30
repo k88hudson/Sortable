@@ -89,6 +89,7 @@
 			ghostClass: 'sortable-ghost',
 			ignore: 'a, img',
 			filter: null,
+			scroll: true,
 			scrollBuffer: 50,
 			scrollSpeed: 10
 		};
@@ -271,8 +272,8 @@
 		},
 
 		_scroll: function (y) {
-			var
-				  buffer = this.options.scrollBuffer
+			var   scrollEl = this.options.scroll
+				, buffer = this.options.scrollBuffer
 				, speed = this.options.scrollSpeed
 				, scroll;
 
@@ -286,9 +287,16 @@
 
 			clearInterval(scrollInterval);
 			if (scroll) {
-				scrollInterval = setInterval(function() {
-					window.scrollTo(window.scrollX, window.scrollY + (speed * scroll));
-				}, 10);
+				if (scrollEl === true) {
+					scrollInterval = setInterval(function() {
+						window.scrollTo(window.scrollX, window.scrollY + (speed * scroll));
+					}, 10);
+				} else if (scrollEl) {
+					scrollInterval = setInterval(function() {
+						scrollEl.scrollTop += speed * scroll;
+					}, 10);
+				}
+				
 			}
 		},
 
