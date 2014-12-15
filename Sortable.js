@@ -90,7 +90,7 @@
 			ignore: 'a, img',
 			filter: null,
 			scroll: true,
-			scrollBuffer: 50,
+			scrollBuffer: 100,
 			scrollSpeed: 10
 		};
 
@@ -296,7 +296,7 @@
 						scrollEl.scrollTop += speed * scroll;
 					}, 10);
 				}
-				
+
 			}
 		},
 
@@ -308,7 +308,7 @@
 			if( tapEvt ){
 				var
 					  touch = evt.touches[0]
-					, dx = touch.clientX - tapEvt.clientX
+                    , dx = touch.clientX - tapEvt.clientX
 					, dy = touch.clientY - tapEvt.clientY
 					, translate3d = 'translate3d(' + dx + 'px,' + dy + 'px,0)'
 				;
@@ -345,7 +345,7 @@
 				_css(ghostEl, 'left', rect.left - parseInt(css.marginLeft, 10));
 				_css(ghostEl, 'width', rect.width);
 				_css(ghostEl, 'height', rect.height);
-				_css(ghostEl, 'opacity', '0.8');
+				_css(ghostEl, 'opacity', '.9');
 				_css(ghostEl, 'position', 'fixed');
 				_css(ghostEl, 'zIndex', '100000');
 
